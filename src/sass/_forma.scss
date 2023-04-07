@@ -1,0 +1,15 @@
+.search-form {
+  position: fixed;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+button {
+  color: #ffffff;
+  background-color: #2196f3;
+  border: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
