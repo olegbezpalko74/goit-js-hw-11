@@ -16,6 +16,13 @@ loadBtn.style.display = 'none';
 
 async function eventHandler(e) {
   e.preventDefault();
+  name = searchQuery.value.trim();
+  if (name === '') {
+    Notiflix.Notify.failure('Please enter a valid search query.');
+    return;
+  }
+
+
   gallery.innerHTML = '';
   loadBtn.style.display = 'none';
 
@@ -29,6 +36,7 @@ async function eventHandler(e) {
       if (name.hits.length > 0) {
         Notiflix.Notify.success(`Hooray! We found ${name.totalHits} images.`);
         renderGallery(name);
+        
         new SimpleLightbox('.gallery a');
         if (page < totalPages) {
           loadBtn.style.display = 'flex';
@@ -92,6 +100,11 @@ function renderGallery(name) {
     .join('');
   gallery.insertAdjacentHTML('beforeend', markup);
 }
+
+
+
+
+
 
 loadBtn.addEventListener(
   'click',
